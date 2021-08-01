@@ -21,15 +21,15 @@ class CreateUserService {
 
 		const hashedPassword = await hash(password, 8);
 
-		const product = usersRepository.create({
+		const user = usersRepository.create({
 			name,
 			email,
 			password: hashedPassword,
 		});
 
-		await usersRepository.save(product);
+		await usersRepository.save(user);
 
-		return product;
+		return user;
 	}
 }
 
